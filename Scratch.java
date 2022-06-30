@@ -1,6 +1,6 @@
 /*
 Given a sorted array, find the smallest positive integer that is not the sum of a subset of the array.
-For example, for the input [1, 2, 3, 10], you should return 7. Do this in O(N) time.
+For example, for the input [1, 2, 3, 10], you should return 7.
 
 Input:  arr[] = {1, 10, 3, 11, 6, 15};
 Output: 2
@@ -41,18 +41,18 @@ class Scratch {
     }
 
     public static int findSmallestSum(int[] arr) {
-        int res = 1;
+        int smallestSum = 1;
         for (int i : arr) {
-            System.out.println("is " + i + " > " + res);
-            if (i > res) {
-                System.out.println("Current element " + i + " greater than result; Lets break and return result: " + res);
-                return res;
+            System.out.println("is " + i + " > " + smallestSum);
+            if (i > smallestSum) {
+                System.out.println("Current element " + i + " greater than result; Lets break and return the smallestSum: " + smallestSum);
+                return smallestSum;
             } else {
-                System.out.println("Current element  " + i + "  not greater than current result: " + res + " += " + i);
-                res += i;
-                System.out.println("currentResult = " + res);
+                System.out.println("Current element  " + i + "  not greater than current smallestSum: " + smallestSum + " += " + i);
+                smallestSum += i;
+                System.out.println("smallestSum = " + smallestSum);
             }
         }
-        return res;
+        return smallestSum;
     }
 }
